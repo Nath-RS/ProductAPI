@@ -1,51 +1,57 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { useState, useEffect } from 'react';
+import ProductList from './ProductList';
 
-function App() {
-    const [forecasts, setForecasts] = useState();
+export default function App() {
+    const [items, setItems] = useState([]);
+    const [form, setForm] = useState({ name: '', price: '', category: '' });
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
 
-    useEffect(() => {
-        populateWeatherData();
-    }, []);
+    const load = async () => {
+        try {
+            setLoading(true);
+            const res = await fetch('/produto'); // via proxy https
+            const data = await res.json();
+            setItems(data);
+        } catch (e) {
+            setError('Falha ao carregar produtos');
+        } finally {
+            setLoading(false);
+        }
+    };
 
-    const contents = forecasts === undefined
-        ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-        : <table className="table table-striped" aria-labelledby="tableLabel">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Temp. (C)</th>
-                    <th>Temp. (F)</th>
-                    <th>Summary</th>
-                </tr>
-            </thead>
-            <tbody>
-                {forecasts.map(forecast =>
-                    <tr key={forecast.date}>
-                        <td>{forecast.date}</td>
-                        <td>{forecast.temperatureC}</td>
-                        <td>{forecast.temperatureF}</td>
-                        <td>{forecast.summary}</td>
-                    </tr>
-                )}
-            </tbody>
-        </table>;
+    useEffect(() => { load(); }, []);
+
+    const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+        try {
+            const res = await fetch('/produto', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: form.name, price: Number(form.price), category: form.category })
+            });
+            if (!res.ok) throw new Error('Erro ao salvar');
+            setForm({ name: '', price: '', category: '' });
+            await load();
+        } catch (e) {
+            setError(e.message);
+        }
+    };
 
     return (
-        <div>
-            <h1 id="tableLabel">Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server.</p>
-            {contents}
+        <div style={{ maxWidth: 720, margin: '2rem auto', fontFamily: 'system-ui' }}>
+            <h1>Cadastro de Produtos</h1>
+            <form onSubmit={onSubmit} style={{ display: 'grid', gap: 12, marginBottom: 24 }}>
+                <input name="name" placeholder="Nome" value={form.name} onChange={onChange} required />
+                <input name="price" type="number" step="0.01" placeholder="Preço" value={form.price} onChange={onChange} required />
+                <input name="category" placeholder="Categoria" value={form.category} onChange={onChange} required />
+                <button type="submit">Salvar</button>
+            </form>
+            {error && <p style={{ color: 'crimson' }}>{error}</p>}
+            {loading ? <p>Carregando...</p> : <ProductList items={items} />}
         </div>
     );
-    
-    async function populateWeatherData() {
-        const response = await fetch('weatherforecast');
-        if (response.ok) {
-            const data = await response.json();
-            setForecasts(data);
-        }
-    }
 }
-
-export default App;

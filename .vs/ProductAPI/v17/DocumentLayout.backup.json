@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Nathjan\\source\\ProductAPI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3458CCB4-50A3-4C3C-8494-875C1AFC8E81}|ProductAPI.Server\\ProductAPI.Server.csproj|c:\\users\\nathjan\\source\\productapi\\productapi.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3458CCB4-50A3-4C3C-8494-875C1AFC8E81}|ProductAPI.Server\\ProductAPI.Server.csproj|solutionrelative:productapi.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{404148A5-F498-26C6-8E40-AA7D3D9AB2EC}|productapi.client\\productapi.client.esproj|c:\\users\\nathjan\\source\\productapi\\productapi.client\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{404148A5-F498-26C6-8E40-AA7D3D9AB2EC}|productapi.client\\productapi.client.esproj|solutionrelative:productapi.client\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{404148A5-F498-26C6-8E40-AA7D3D9AB2EC}|productapi.client\\productapi.client.esproj|c:\\users\\nathjan\\source\\productapi\\productapi.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{404148A5-F498-26C6-8E40-AA7D3D9AB2EC}|productapi.client\\productapi.client.esproj|solutionrelative:productapi.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nathjan\\source\\ProductAPI\\ProductAPI.Server\\Program.cs",
+              "RelativeDocumentMoniker": "ProductAPI.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\Nathjan\\source\\ProductAPI\\ProductAPI.Server\\Program.cs",
+              "RelativeToolTip": "ProductAPI.Server\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T19:38:44.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "vite.config.js",
+              "DocumentMoniker": "C:\\Users\\Nathjan\\source\\ProductAPI\\productapi.client\\vite.config.js",
+              "RelativeDocumentMoniker": "productapi.client\\vite.config.js",
+              "ToolTip": "C:\\Users\\Nathjan\\source\\ProductAPI\\productapi.client\\vite.config.js",
+              "RelativeToolTip": "productapi.client\\vite.config.js",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-08-15T18:43:45.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.jsx",
+              "DocumentMoniker": "C:\\Users\\Nathjan\\source\\ProductAPI\\productapi.client\\src\\App.jsx",
+              "RelativeDocumentMoniker": "productapi.client\\src\\App.jsx",
+              "ToolTip": "C:\\Users\\Nathjan\\source\\ProductAPI\\productapi.client\\src\\App.jsx",
+              "RelativeToolTip": "productapi.client\\src\\App.jsx",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAkwCkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-08-15T18:42:48.234Z",
+              "EditorCaption": ""
             }
           ]
         }

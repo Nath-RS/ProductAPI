@@ -9,11 +9,18 @@
     <SpaProxyServerUrl>https://localhost:54803</SpaProxyServerUrl>
   </PropertyGroup>
 
+	<ItemGroup>
+		<Compile Remove="Controllers\WeatherForecastController.cs" />
+		<Compile Remove="WeatherForecast.cs" />
+	</ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
       <Version>8.*-*</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
