@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Nathjan\\source\\ProductAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{404148A5-F498-26C6-8E40-AA7D3D9AB2EC}|productapi.client\\productapi.client.esproj|c:\\users\\nathjan\\source\\productapi\\productapi.client\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{404148A5-F498-26C6-8E40-AA7D3D9AB2EC}|productapi.client\\productapi.client.esproj|solutionrelative:productapi.client\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{404148A5-F498-26C6-8E40-AA7D3D9AB2EC}|productapi.client\\productapi.client.esproj|c:\\users\\nathjan\\source\\productapi\\productapi.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{404148A5-F498-26C6-8E40-AA7D3D9AB2EC}|productapi.client\\productapi.client.esproj|solutionrelative:productapi.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3458CCB4-50A3-4C3C-8494-875C1AFC8E81}|ProductAPI.Server\\ProductAPI.Server.csproj|c:\\users\\nathjan\\source\\productapi\\productapi.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3458CCB4-50A3-4C3C-8494-875C1AFC8E81}|ProductAPI.Server\\ProductAPI.Server.csproj|solutionrelative:productapi.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{404148A5-F498-26C6-8E40-AA7D3D9AB2EC}|productapi.client\\productapi.client.esproj|c:\\users\\nathjan\\source\\productapi\\productapi.client\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{404148A5-F498-26C6-8E40-AA7D3D9AB2EC}|productapi.client\\productapi.client.esproj|solutionrelative:productapi.client\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{404148A5-F498-26C6-8E40-AA7D3D9AB2EC}|productapi.client\\productapi.client.esproj|c:\\users\\nathjan\\source\\productapi\\productapi.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{404148A5-F498-26C6-8E40-AA7D3D9AB2EC}|productapi.client\\productapi.client.esproj|solutionrelative:productapi.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "App.css",
+              "DocumentMoniker": "C:\\Users\\Nathjan\\source\\ProductAPI\\productapi.client\\src\\App.css",
+              "RelativeDocumentMoniker": "productapi.client\\src\\App.css",
+              "ToolTip": "C:\\Users\\Nathjan\\source\\ProductAPI\\productapi.client\\src\\App.css",
+              "RelativeToolTip": "productapi.client\\src\\App.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-15T21:24:44.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Nathjan\\source\\ProductAPI\\ProductAPI.Server\\Program.cs",
               "RelativeDocumentMoniker": "ProductAPI.Server\\Program.cs",
@@ -43,26 +60,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "vite.config.js",
               "DocumentMoniker": "C:\\Users\\Nathjan\\source\\ProductAPI\\productapi.client\\vite.config.js",
               "RelativeDocumentMoniker": "productapi.client\\vite.config.js",
               "ToolTip": "C:\\Users\\Nathjan\\source\\ProductAPI\\productapi.client\\vite.config.js",
               "RelativeToolTip": "productapi.client\\vite.config.js",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADQAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADQAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-08-15T18:43:45.62Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "App.jsx",
               "DocumentMoniker": "C:\\Users\\Nathjan\\source\\ProductAPI\\productapi.client\\src\\App.jsx",
               "RelativeDocumentMoniker": "productapi.client\\src\\App.jsx",
               "ToolTip": "C:\\Users\\Nathjan\\source\\ProductAPI\\productapi.client\\src\\App.jsx",
               "RelativeToolTip": "productapi.client\\src\\App.jsx",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAkwCkAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAQwEEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
               "WhenOpened": "2025-08-15T18:42:48.234Z",
               "EditorCaption": ""

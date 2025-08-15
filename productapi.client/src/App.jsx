@@ -1,57 +1,110 @@
-import { useState, useEffect } from 'react';
-import ProductList from './ProductList';
+import { useEffect, useState } from 'react';
+import './App.css';
 
-export default function App() {
-    const [items, setItems] = useState([]);
+function App() {
     const [form, setForm] = useState({ name: '', price: '', category: '' });
+    const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
+    const [error, setError] = useState(null);
 
-    const load = async () => {
+    const fetchProducts = async () => {
+        setLoading(true);
+        setError(null);
         try {
-            setLoading(true);
-            const res = await fetch('/produto'); // via proxy https
-            const data = await res.json();
-            setItems(data);
-        } catch (e) {
-            setError('Falha ao carregar produtos');
+            const res = await fetch('/produto');
+            if (!res.ok) throw new Error(`Erro ao buscar produtos: ${res.status}`);
+            const text = await res.text();
+            const data = text ? JSON.parse(text) : [];
+            setProducts(data);
+        } catch (err) {
+            console.error(err);
+            setError(err.message);
+            setProducts([]);
         } finally {
             setLoading(false);
         }
     };
 
-    useEffect(() => { load(); }, []);
+    useEffect(() => {
+        fetchProducts();
+    }, []);
 
-    const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-
-    const onSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setError('');
+        setError(null);
         try {
             const res = await fetch('/produto', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name: form.name, price: Number(form.price), category: form.category })
+                body: JSON.stringify({ ...form, price: parseFloat(form.price) }),
             });
-            if (!res.ok) throw new Error('Erro ao salvar');
+            if (!res.ok) {
+                const text = await res.text();
+                throw new Error(`Erro ao salvar: ${text}`);
+            }
             setForm({ name: '', price: '', category: '' });
-            await load();
-        } catch (e) {
-            setError(e.message);
+            fetchProducts();
+        } catch (err) {
+            console.error(err);
+            setError(err.message);
         }
     };
 
     return (
-        <div style={{ maxWidth: 720, margin: '2rem auto', fontFamily: 'system-ui' }}>
+
+        <div className="app-container">
             <h1>Cadastro de Produtos</h1>
-            <form onSubmit={onSubmit} style={{ display: 'grid', gap: 12, marginBottom: 24 }}>
-                <input name="name" placeholder="Nome" value={form.name} onChange={onChange} required />
-                <input name="price" type="number" step="0.01" placeholder="Preço" value={form.price} onChange={onChange} required />
-                <input name="category" placeholder="Categoria" value={form.category} onChange={onChange} required />
+
+            <form className="product-form" onSubmit={handleSubmit}>
+                <input
+                    placeholder="Nome"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    required
+                />
+                <input
+                    placeholder="Preco"
+                    type="number"
+                    value={form.price}
+                    onChange={(e) => setForm({ ...form, price: e.target.value })}
+                    required
+                />
+                <input
+                    placeholder="Categoria"
+                    value={form.category}
+                    onChange={(e) => setForm({ ...form, category: e.target.value })}
+                    required
+                />
                 <button type="submit">Salvar</button>
             </form>
-            {error && <p style={{ color: 'crimson' }}>{error}</p>}
-            {loading ? <p>Carregando...</p> : <ProductList items={items} />}
+
+            {error && <p className="error-message">{error}</p>}
+
+            {loading ? (
+                <p>Carregando produtos...</p>
+            ) : (
+                <table className="product-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Preco (R$)</th>
+                            <th>Categoria</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {products.map((p) => (
+                            <tr key={p.id}>
+                                <td>{p.name}</td>
+                                <td>{p.price.toFixed(2)}</td>
+                                <td>{p.category}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            )}
         </div>
+
     );
 }
+
+export default App;
