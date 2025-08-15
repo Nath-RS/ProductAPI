@@ -1,0 +1,1 @@
+C:\Users\Nathjan\source\ProductAPI\productapi.client\obj\Debug\productapi.client.esproj.CoreCompileInputs.cache
