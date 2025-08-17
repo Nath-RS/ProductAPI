@@ -82,8 +82,8 @@ ProductAPI/
 ---
 ## Rodando o projeto (vs 2022)
 
-1.Abra o arquivo ProductAPI.sln com visual studio 2022
-2.Clique no botão iniciar ▶ na aba superior da janela.
+1. Abra o arquivo ProductAPI.sln com visual studio 2022.
+2. Clique no botão iniciar ▶ na aba superior da janela.
 
 ## Rodando o projeto (vs code)
 
