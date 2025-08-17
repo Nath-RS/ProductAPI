@@ -71,7 +71,7 @@ ProductAPI/
 │  ├─ Controllers/ProductController.cs
 │  ├─ Infrastructure/Data/AppDbContext.cs
 │  └─ DTOs/ProductCreateDTO.cs / ProductReadDTO.cs
-├─ Frontend-react-product-app/  # Frontend (React)
+├─ productapi.client/  # Frontend (React)
 │  ├─ src/
 │  │  ├─ App.jsx
 │  │  └─ App.css
